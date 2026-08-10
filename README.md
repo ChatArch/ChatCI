@@ -19,13 +19,23 @@ ChatCI: ChatArch placeholder package for PyPI name registration.
 pip install -e ".[dev]"
 chatci --help
 chatci --version
+chatci --tree
 python -m pytest -q
 python -m build
 ```
 
 ## CLI 规范
 
-这个模板默认依赖 `chatstyle>=0.1.0,<0.2.0` 和 `chatenv>=0.2.0,<0.3.0`，新的命令应优先使用：
+这个模板默认依赖 `chatstyle>=0.1.1,<0.2.0` 和 `chatenv>=0.2.3,<0.3.0`，新的命令应优先使用：
+
+当前可回读命令树：
+
+```text
+chatci  # ChatCI command-line interface.
+├── --help  # Show this help message.
+├── --version  # Show the installed package version.
+└── --tree  # Print the registered command tree.
+```
 
 - `CommandSchema` / `CommandField` 描述输入。
 - `add_interactive_option()` 提供统一 `-i/-I`。
