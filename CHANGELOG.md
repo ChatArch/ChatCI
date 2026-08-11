@@ -12,7 +12,7 @@
 - Add docs extras and PyPI Documentation metadata for https://arch.gh.wzhecnu.cn/ChatCI/.
 - Harden tag-driven PyPI publishing with tag/package-version, default-branch, and exact PyPI version guards.
 - Add installed CLI smoke checks and docs build to CI.
-- Set the MkDocs production default version to `latest` so the public docs root resolves.
+- Publish the production docs site directly to the `gh-pages` root so `https://arch.gh.wzhecnu.cn/ChatCI/` returns content instead of a version redirect.
 
 ## 0.1.1 - 2026-08-10
 

@@ -28,8 +28,9 @@ def test_docs_workflows_exist_and_use_chatarch_public_domain():
     deploy = Path(".github/workflows/deploy.yaml").read_text(encoding="utf-8")
     preview = Path(".github/workflows/preview.yaml").read_text(encoding="utf-8")
 
-    assert "mike deploy --push --update-aliases latest" in deploy
-    assert "mike set-default --push latest" in deploy
+    assert "mkdocs gh-deploy --force" in deploy
+    assert "mike deploy" not in deploy
+    assert "mike set-default" not in deploy
     assert "site_url" in preview
     assert "CHATARCH_PREVIEW_URL" in preview
     assert "${site_url}/dev/" in preview
