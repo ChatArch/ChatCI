@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.1.2 - 2026-08-12
+
+### Added
+- Add MkDocs Material bilingual documentation under the ChatArch docs domain.
+- Add Preview Docs and Deploy Docs workflows for public docs publishing.
+- Add docs/workflow contract tests for the ChatArch CLI/docs/release surface.
+
+### Changed
+- Enable MkDocs Material emoji rendering via `pymdownx.emoji` with Material `twemoji`/`to_svg`.
+- Add docs extras and PyPI Documentation metadata for https://arch.gh.wzhecnu.cn/ChatCI/.
+- Harden tag-driven PyPI publishing with tag/package-version, default-branch, and exact PyPI version guards.
+- Add installed CLI smoke checks and docs build to CI.
+
 ## 0.1.1 - 2026-08-10
 
 ### Added
