@@ -2,6 +2,9 @@
     <a href="https://pypi.python.org/pypi/ChatCI">
         <img src="https://img.shields.io/pypi/v/ChatCI.svg" alt="PyPI version" />
     </a>
+    <a href="https://arch.gh.wzhecnu.cn/ChatCI/">
+        <img src="https://img.shields.io/badge/docs-ChatArch-blue" alt="Docs" />
+    </a>
 </div>
 
 <div align="center">
@@ -11,22 +14,31 @@
 
 # ChatCI
 
-ChatCI: ChatArch placeholder package for PyPI name registration.
+ChatCI is the ChatArch CI workflow package shell. It keeps the PyPI package and console command entrypoint compliant.
+
+- Docs: https://arch.gh.wzhecnu.cn/ChatCI/
+- PyPI: https://pypi.org/project/ChatCI/
 
 ## Quick Start
 
 ```bash
-pip install -e ".[dev]"
+pip install ChatCI
 chatci --help
 chatci --version
 chatci --tree
+```
+
+Development environment:
+
+```bash
+pip install -e ".[dev,docs]"
 python -m pytest -q
+mkdocs build --strict
 python -m build
+python -m twine check dist/*
 ```
 
 ## CLI Contract
-
-This template depends on `chatstyle>=0.1.1,<0.2.0` and `chatenv>=0.2.3,<0.3.0`. New commands should prefer:
 
 Current command-tree readback:
 
@@ -37,10 +49,7 @@ chatci  # ChatCI command-line interface.
 └── --tree  # Print the registered command tree.
 ```
 
-- `CommandSchema` / `CommandField` for inputs.
-- `add_interactive_option()` for the shared `-i/-I` switch.
-- `resolve_command_inputs()` for missing args, defaults, TTY behavior, and validation.
-- Generate `config.py` and a `chatenv.configs` entry point by default so the package is ChatEnv-discoverable; use `--without-chatenv-provider` only when ChatEnv integration is intentionally not needed.
+`ChatCI` currently has a root-options-only surface; it has no real second-level business command. When a command is added, `chatci --tree` must be generated from the real Click registry and tests, README, MkDocs docs, and the release report must be synchronized.
 
 ## Layout
 
@@ -48,6 +57,7 @@ chatci  # ChatCI command-line interface.
 - `tests/code-tests/`: code tests and migrated historical tests
 - `tests/cli-tests/`: real CLI tests, doc-first
 - `tests/mock-cli-tests/`: mock/fake CLI tests, doc-first
+- `docs/`: bilingual MkDocs Material documentation
 
 ## Development Notes
 

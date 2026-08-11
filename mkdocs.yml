@@ -1,0 +1,55 @@
+site_name: ChatCI
+site_description: ChatArch CI workflow package shell.
+site_url: https://arch.gh.wzhecnu.cn/ChatCI/
+repo_url: https://github.com/ChatArch/ChatCI
+repo_name: ChatArch/ChatCI
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+
+plugins:
+  - search
+  - i18n:
+      docs_structure: suffix
+      languages:
+        - locale: zh
+          default: true
+          name: 中文
+          build: true
+          nav:
+            - 首页: index.md
+            - CLI 树: cli-tree.md
+        - locale: en
+          name: English
+          build: true
+          nav:
+            - Home: index.md
+            - CLI Tree: cli-tree.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra:
+  alternate:
+    - name: 中文
+      link: /ChatCI/
+      lang: zh
+    - name: English
+      link: /ChatCI/en/
+      lang: en
