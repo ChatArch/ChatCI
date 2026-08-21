@@ -28,7 +28,9 @@ def test_cli_tree_docs_are_bilingual_and_use_public_command():
 
     assert "chatci --tree" in zh
     assert "chatci --tree" in en
-    assert "ChatCI command-line interface" in zh
-    assert "ChatCI command-line interface" in en
+    assert "chatci --tree-brief" in zh
+    assert "chatci --tree-brief" in en
+    assert "参数签名" in zh
+    assert "parameter signatures" in en
     assert "python -m chatci.cli" not in zh
     assert "python -m chatci.cli" not in en

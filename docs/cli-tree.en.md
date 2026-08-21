@@ -1,12 +1,13 @@
 # CLI Tree
 
-`chatci --tree` prints the currently registered Click command surface with compact purpose comments for each node.
+`chatci --tree` uses the shared ChatStyle Click tree runtime to print the registered command surface with parameter signatures by default and compact purpose comments for each node.
 
 ```text
-chatci  # ChatCI command-line interface.
-├── --help  # Show this help message.
-├── --version  # Show the installed package version.
-└── --tree  # Print the registered command tree.
+chatci
+├── --help  # Show this message and exit.
+├── --version  # Show the version and exit.
+├── --tree  # Print the registered CLI tree and exit.
+└── --tree-brief  # Print the registered CLI tree without parameter signatures and exit.
 ```
 
-`ChatCI` currently has no real second-level business command; it exposes root options only. When a new command is added, update the tests first and then synchronize this document.
+`chatci --tree-brief` keeps command nodes and descriptions while omitting parameter signatures. `ChatCI` currently has no real second-level business command and all root options are flags, so full and brief currently contain the same nodes. When a new command is added, update tests for both surfaces first and then synchronize this document.

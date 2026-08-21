@@ -26,6 +26,7 @@ pip install ChatCI
 chatci --help
 chatci --version
 chatci --tree
+chatci --tree-brief
 ```
 
 Development environment:
@@ -43,13 +44,14 @@ python -m twine check dist/*
 Current command-tree readback:
 
 ```text
-chatci  # ChatCI command-line interface.
-├── --help  # Show this help message.
-├── --version  # Show the installed package version.
-└── --tree  # Print the registered command tree.
+chatci
+├── --help  # Show this message and exit.
+├── --version  # Show the version and exit.
+├── --tree  # Print the registered CLI tree and exit.
+└── --tree-brief  # Print the registered CLI tree without parameter signatures and exit.
 ```
 
-`ChatCI` currently has a root-options-only surface; it has no real second-level business command. When a command is added, `chatci --tree` must be generated from the real Click registry and tests, README, MkDocs docs, and the release report must be synchronized.
+`chatci --tree` is generated from the real registry by the shared ChatStyle Click tree runtime and includes command parameter signatures by default. `chatci --tree-brief` keeps command nodes and descriptions while omitting parameter signatures. `ChatCI` currently has a root-options-only surface whose public options are all flags, so both modes currently contain the same nodes. When a command is added, tests, README, MkDocs docs, and the release report must be synchronized.
 
 ## Layout
 

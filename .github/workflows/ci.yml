@@ -36,6 +36,7 @@ jobs:
         run: |
           chatci --version
           chatci --tree
+          chatci --tree-brief
       - name: Build distributions
         run: python -m build
       - name: Check distributions

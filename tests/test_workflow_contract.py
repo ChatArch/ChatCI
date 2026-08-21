@@ -21,6 +21,7 @@ def test_ci_builds_docs_smokes_installed_cli_and_checks_distributions():
     assert "mkdocs build --strict" in workflow
     assert "chatci --version" in workflow
     assert "chatci --tree" in workflow
+    assert "chatci --tree-brief" in workflow
     assert "python -m twine check dist/*" in workflow
 
 
