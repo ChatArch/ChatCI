@@ -26,6 +26,7 @@ pip install ChatCI
 chatci --help
 chatci --version
 chatci --tree
+chatci --tree-brief
 ```
 
 开发环境：
@@ -43,13 +44,14 @@ python -m twine check dist/*
 当前可回读命令树：
 
 ```text
-chatci  # ChatCI command-line interface.
-├── --help  # Show this help message.
-├── --version  # Show the installed package version.
-└── --tree  # Print the registered command tree.
+chatci
+├── --help  # Show this message and exit.
+├── --version  # Show the version and exit.
+├── --tree  # Print the registered CLI tree and exit.
+└── --tree-brief  # Print the registered CLI tree without parameter signatures and exit.
 ```
 
-当前 `ChatCI` 是 root-options-only surface；没有真实业务二级命令。后续新增命令时，必须从真实 Click registry 生成 `chatci --tree`，并同步测试、README、MkDocs 文档和 release report。
+`chatci --tree` 由 ChatStyle 共享 Click tree runtime 从真实 registry 生成，并默认显示命令参数签名；`chatci --tree-brief` 保留命令节点和描述，但省略参数签名。当前 `ChatCI` 是 root-options-only surface，所有公开选项都是 flag，因此两种输出目前包含相同节点。后续新增命令时，必须同步测试、README、MkDocs 文档和 release report。
 
 ## 目录结构
 

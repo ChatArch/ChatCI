@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.3 - 2026-08-21
+
+### Changed
+- Migrate the top-level Click tree options to the shared ChatStyle runtime with the public `chatci` root name.
+- Add `chatci --tree-brief` for command-tree readback without parameter signatures while keeping signatures in `chatci --tree`.
+- Raise runtime bounds to `chatstyle>=0.2.0,<0.3.0` and `chatenv>=0.2.10,<0.3.0`.
+
 ## 0.1.2 - 2026-08-12
 
 ### Added
